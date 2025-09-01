@@ -60,9 +60,7 @@ class MainActivity : ComponentActivity() {
 fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
     Column(
         verticalArrangement = Arrangement.Center,
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(8.dp)
+        modifier = modifier
     ) {
         Text(
             text = message,
@@ -75,7 +73,7 @@ fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
             fontSize = 36.sp,
             modifier = Modifier
                 .padding(16.dp)
-                .align(alignment = Alignment.End)
+                .align(alignment = Alignment.CenterHorizontally)
         )
     }
 }
@@ -103,11 +101,9 @@ fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier) 
 @Composable
 fun BirthdayCardPreview() {
     HappyBirthdayTheme {
-
         GreetingImage(
             message = stringResource(R.string.happy_birthday_text),
-            from = "From Amogus",
-            modifier = Modifier.padding(8.dp)
+            from = stringResource(R.string.signature_text)
         )
     }
 }
